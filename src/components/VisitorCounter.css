@@ -1,0 +1,29 @@
+.visitor-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--icon-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  width: fit-content;
+  user-select: none;
+}
+
+.counter-icon {
+  font-size: 0.85rem;
+}
+
+.counter-num {
+  color: var(--berry);
+  font-weight: 600;
+}
+
+.counter-note {
+  color: var(--text-muted);
+  opacity: 0.6;
+  font-size: 0.65rem;
+}

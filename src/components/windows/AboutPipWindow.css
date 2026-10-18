@@ -1,0 +1,239 @@
+.about-window {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 300px;
+}
+
+/* Header */
+.about-header {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 4px 0 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-pip-portrait {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.about-pip-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: 'Times New Roman', 'Georgia', serif;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #6bcb77;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.about-name-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.about-name {
+  font-size: 1.6rem;
+  color: var(--berry);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.about-tagline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: 'Times New Roman', 'Georgia', serif;
+}
+
+.about-intro {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Tabs */
+.about-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 4px;
+}
+
+.about-tab {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-radius: 8px 8px 0 0;
+  transition: all 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.about-tab:hover {
+  color: var(--berry);
+  background: rgba(163, 64, 99, 0.06);
+}
+
+.about-tab.active {
+  color: var(--berry);
+  border-bottom-color: var(--berry);
+  font-weight: 600;
+}
+
+/* Bio */
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 12px;
+  background: rgba(163, 64, 99, 0.04);
+  border-radius: 8px;
+  border-left: 3px solid var(--berry);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-family: 'Times New Roman', 'Georgia', serif;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.stat-value {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.personality-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.personality-tag {
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 20px;
+  background: rgba(163, 64, 99, 0.12);
+  color: var(--berry);
+  font-family: 'Times New Roman', 'Georgia', serif;
+}
+
+/* Quirks */
+.about-quirks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.quirks-intro {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.quirk-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--cream-dark);
+  border-radius: 10px;
+  transition: transform 0.2s ease;
+}
+
+.quirk-item:hover {
+  transform: translateX(4px);
+}
+
+.quirk-icon {
+  font-size: 1.2rem;
+  width: 28px;
+  text-align: center;
+}
+
+.quirk-text {
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+/* Message */
+.about-message {
+  padding: 4px;
+}
+
+.message-paper {
+  background: var(--cream-dark);
+  border: 1px dashed var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.message-stamp {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.8rem;
+  opacity: 0.4;
+}
+
+.message-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.message-signature {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--berry);
+  font-weight: 600;
+  text-align: right;
+  margin-top: 8px;
+}
+
+@media (max-width: 500px) {
+  .about-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .stat-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+}

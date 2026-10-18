@@ -1,0 +1,155 @@
+.wallpaper {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  transition: background 0.6s ease;
+}
+
+.wallpaper-day {
+  background: linear-gradient(
+    160deg,
+    #ffecd2 0%,
+    #fff8f1 40%,
+    #fde8f0 70%,
+    #e8d5f0 100%
+  );
+}
+
+.wallpaper-night {
+  background: linear-gradient(
+    160deg,
+    #0d0a18 0%,
+    #1a0d2e 40%,
+    #0f1a30 70%,
+    #1a0a20 100%
+  );
+}
+
+.wallpaper-chaos.wallpaper-day {
+  background: linear-gradient(
+    160deg,
+    #ffe8f5 0%,
+    #fff0f0 30%,
+    #f0f0ff 60%,
+    #f0fff0 100%
+  );
+  animation: chaosGradient 4s ease-in-out infinite;
+}
+
+@keyframes chaosGradient {
+  0%, 100% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(30deg); }
+}
+
+/* Stars */
+.wp-star {
+  position: absolute;
+  border-radius: 50%;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: var(--star-dur, 3s);
+}
+
+.wp-star-soft {
+  background: rgba(232, 197, 71, 0.4);
+  animation-name: starTwinkleSoft;
+}
+
+.wp-star-bright {
+  background: rgba(255, 240, 200, 0.9);
+  box-shadow: 0 0 4px 1px rgba(255, 240, 200, 0.5);
+  animation-name: starTwinkleBright;
+}
+
+@keyframes starTwinkleSoft {
+  from { opacity: 0.1; transform: scale(0.8); }
+  to { opacity: 0.6; transform: scale(1.1); }
+}
+
+@keyframes starTwinkleBright {
+  from { opacity: 0.4; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1.3); }
+}
+
+/* Clouds */
+.wp-cloud {
+  position: absolute;
+  animation: cloudDrift linear infinite;
+  transform-origin: center;
+}
+
+.wp-cloud-day {
+  color: #c8a0b0;
+}
+
+.wp-cloud-night {
+  color: #4a3060;
+}
+
+@keyframes cloudDrift {
+  0%   { transform: translateX(0)     scale(var(--cloud-scale, 1)); }
+  100% { transform: translateX(120px) scale(var(--cloud-scale, 1)); }
+}
+
+/* Moon */
+.wp-moon {
+  position: absolute;
+  top: 40px;
+  right: 80px;
+  animation: moonFloat 8s ease-in-out infinite;
+  opacity: 0.9;
+}
+
+@keyframes moonFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Sun */
+.wp-sun {
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  animation: sunFloat 10s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+@keyframes sunFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(10deg); }
+}
+
+/* Gradient overlay */
+.wp-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.02));
+  pointer-events: none;
+}
+
+/* Subtle dot-grid texture — early-web nostalgia, very faint */
+.wallpaper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle,
+    rgba(163, 64, 99, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.wallpaper-night::after {
+  background-image: radial-gradient(
+    circle,
+    rgba(232, 120, 160, 0.04) 1px,
+    transparent 1px
+  );
+}

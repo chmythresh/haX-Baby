@@ -1,0 +1,164 @@
+/* ===================================================================
+   PIP'S DREAM OS — GLOBAL STYLES
+   Midnight Nursery OS v1.0
+   =================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design tokens ── */
+:root {
+  /* Core palette — Daydream mode */
+  --cream:        #fff8f1;
+  --cream-dark:   #f5ece0;
+  --cream-deeper: #ecddd0;
+  --berry:        #a34063;
+  --berry-light:  #c4607e;
+  --berry-dark:   #7a2e4a;
+  --cocoa:        #5c4033;
+  --cocoa-light:  #7a5c4a;
+  --pink:         #f4a7b9;
+  --peach:        #ffcba4;
+  --lavender:     #d8b4f8;
+  --gold:         #e8c547;
+  --gold-dark:    #b89020;
+
+  /* Text — all pass WCAG AA on --cream background */
+  --text-primary:   #3a2820;   /* ~11:1  */
+  --text-secondary: #5a3c2e;   /* ~7.5:1 */
+  --text-muted:     #7a5248;   /* ~4.6:1 */
+
+  /* Surface & shadow */
+  --shadow-soft:   0 4px 20px rgba(92, 64, 51, 0.12);
+  --shadow-window: 0 8px 40px rgba(92, 64, 51, 0.18), 0 2px 8px rgba(92, 64, 51, 0.1);
+  --border-color:  rgba(163, 64, 99, 0.2);
+  --window-bg:     rgba(255, 248, 241, 0.97);
+  --wallpaper-bg:  #e8d5c4;
+  --taskbar-bg:    rgba(255, 248, 241, 0.93);
+  --icon-bg:       rgba(255, 255, 255, 0.72);
+
+  /* Motion */
+  --transition-fast: 150ms ease;
+  --transition-med:  300ms ease;
+  --transition-slow: 500ms ease;
+}
+
+/* ── Sweet Dream (night) overrides ── */
+[data-theme="night"] {
+  --cream:        #1a1225;
+  --cream-dark:   #231530;
+  --cream-deeper: #2e1a40;
+  --berry:        #e878a0;
+  --berry-light:  #f09ab8;
+  --berry-dark:   #c45578;
+  --cocoa:        #8b6a5a;
+  --cocoa-light:  #a88070;
+  --gold-dark:    #d4a830;
+
+  --text-primary:   #f0e6d8;
+  --text-secondary: #d4b8a8;
+  --text-muted:     #b098a8;
+
+  --shadow-soft:   0 4px 20px rgba(0, 0, 0, 0.45);
+  --shadow-window: 0 8px 40px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --border-color:  rgba(232, 120, 160, 0.25);
+  --window-bg:     rgba(26, 18, 37, 0.97);
+  --wallpaper-bg:  #0d0a18;
+  --taskbar-bg:    rgba(14, 9, 24, 0.96);
+  --icon-bg:       rgba(40, 28, 56, 0.82);
+}
+
+/* ── Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-size: 16px;
+  line-height: 1.5;
+  background: var(--wallpaper-bg);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  transition: background var(--transition-slow), color var(--transition-slow);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  line-height: 1.2;
+}
+
+button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Times New Roman', 'Georgia', serif;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar        { width: 8px; }
+::-webkit-scrollbar-track  { background: var(--cream-dark); }
+::-webkit-scrollbar-thumb  { background: var(--berry); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--berry-light); }
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--berry);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Reduced motion ──
+   Applied globally; individual components may override for static fallbacks */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Utilities ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Reusable pill button */
+.pip-button {
+  background: var(--berry);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-family: 'Times New Roman', 'Georgia', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(163, 64, 99, 0.3);
+}
+.pip-button:hover {
+  background: var(--berry-light);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(163, 64, 99, 0.4);
+}
+.pip-button:active {
+  transform: translateY(0);
+}

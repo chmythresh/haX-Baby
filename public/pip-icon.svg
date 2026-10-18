@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Nightcap -->
+  <path d="M9 13 Q10 3 16 2 Q22 3 23 13" fill="#a34063"/>
+  <path d="M9 13 Q16 10 23 13" fill="#c4607e"/>
+  <!-- Star on cap -->
+  <text x="15" y="9" font-size="5" fill="#ffd700" text-anchor="middle">★</text>
+  <!-- Skull -->
+  <ellipse cx="16" cy="20" rx="9" ry="8" fill="#fff8f1"/>
+  <ellipse cx="16" cy="25" rx="5" ry="4" fill="#fff8f1"/>
+  <!-- Eyes -->
+  <ellipse cx="12" cy="18" rx="3.5" ry="3.5" fill="#3a2820"/>
+  <ellipse cx="20" cy="18" rx="3.5" ry="3.5" fill="#3a2820"/>
+  <ellipse cx="12" cy="18" rx="2.2" ry="2.2" fill="#e8943a"/>
+  <ellipse cx="20" cy="18" rx="2.2" ry="2.2" fill="#e8943a"/>
+  <!-- Smile -->
+  <path d="M13 24 Q16 27 19 24" stroke="#a34063" stroke-width="1" fill="none" stroke-linecap="round"/>
+</svg>

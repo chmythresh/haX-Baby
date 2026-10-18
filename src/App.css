@@ -1,0 +1,24 @@
+.app-root {
+  min-height: 100vh;
+  transition: all 0.5s ease;
+}
+
+.app-root.chaos-mode {
+  --cream: #fff0f5;
+  --cream-dark: #ffe0ec;
+  --berry: #ff4488;
+  animation: chaosWiggle 3s ease-in-out infinite;
+}
+
+@keyframes chaosWiggle {
+  0%, 100% { filter: hue-rotate(0deg); }
+  25% { filter: hue-rotate(15deg); }
+  50% { filter: hue-rotate(-10deg); }
+  75% { filter: hue-rotate(20deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-root.chaos-mode {
+    animation: none;
+  }
+}
