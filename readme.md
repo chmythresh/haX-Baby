@@ -136,6 +136,22 @@ npm install
 ```bash
 npm run dev
 ```
+## Team
+
+### [CHALLA ARUNA HASINI] — Team Lead & Full-Stack Developer
+- Led the project and coordinated development
+- Developed and integrated major features
+- Managed the GitHub repository and final deployment
+
+### [CHALLA MYTHRESH] — UI/UX & Frontend Developer
+- Designed the website layout and visual style
+- Worked on responsive design and animations
+- Developed interactive frontend sections
+
+### [SINDHU SRI VUTUKURI] — Testing, Content & Documentation
+- Tested the application and identified bugs
+- Prepared project content and documentation
+- Supported screenshots, demo preparation, and final testing
 
 Open the local URL displayed in your terminal to explore the website.
 
