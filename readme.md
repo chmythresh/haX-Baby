@@ -174,6 +174,8 @@ The focus is on creative execution while respecting Pip's official character ide
 
 **Repository:** [chmythresh/haX-Baby](https://github.com/chmythresh/haX-Baby)
 
+**Live website:** https://ha-x-baby.vercel.app/
+
 **Challenge:** Baby's First Website
 
 **Track:** Track 1 — Pip, the Skull Baby
